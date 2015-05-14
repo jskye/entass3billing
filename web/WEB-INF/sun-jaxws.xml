@@ -3,7 +3,7 @@
 <endpoints xmlns='http://java.sun.com/xml/ns/jax-ws/ri/runtime' version='2.0'>
 
     <endpoint
-            name='HelloWorld'
-            implementation='Payments.PaymentWS'
-            url-pattern='/services/HelloWorld'/>
+            name='PaymentWebService'
+            implementation='PaymentWebService.PaymentWS'
+            url-pattern='/services/PaymentWS'/>
 </endpoints>

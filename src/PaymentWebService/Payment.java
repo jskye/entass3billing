@@ -1,4 +1,4 @@
-package Payments;
+package PaymentWebService;
 
 /**
  * Created by Julius Myszkowski on 14/05/2015.

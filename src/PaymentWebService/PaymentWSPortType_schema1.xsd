@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema version="1.0" targetNamespace="http://Payments/" xmlns:tns="http://Payments/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema version="1.0" targetNamespace="http://PaymentWebService/" xmlns:tns="http://PaymentWebService/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="getPaymentsList" type="tns:getPaymentsList"/>
+
+  <xs:element name="getPaymentsListResponse" type="tns:getPaymentsListResponse"/>
 
   <xs:element name="makeCCPayment" type="tns:makeCCPayment"/>
 
@@ -19,6 +23,24 @@
   <xs:complexType name="makePPPaymentResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPaymentsList">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPaymentsListResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:payment" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="payment">
+    <xs:sequence>
+      <xs:element name="paymentAmount" type="xs:double"/>
     </xs:sequence>
   </xs:complexType>
 

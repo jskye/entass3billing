@@ -1,4 +1,4 @@
-package Payments;
+package PaymentWebService;
 
 import java.io.Serializable;
 
@@ -9,23 +9,23 @@ import java.io.Serializable;
  * Student Number: c3155112
  * email: c3155112@uon.edu.au, julius.skye@gmail.com
  */
-public class CreditCardPayment extends Payment implements Serializable{
+public class PaypalPayment extends Payment implements Serializable{
 
-    private int creditCardNumber;
+    private String payPalId;
 
-    public CreditCardPayment(){}
+    public PaypalPayment(){}
 
-    public int getCreditCardNumber() {
-        return creditCardNumber;
+    public String getPayPalId() {
+        return payPalId;
     }
 
-    public void setCreditCardNumber(int creditCardNumber) {
-        this.creditCardNumber = creditCardNumber;
+    public void setPayPalId(String payPalId) {
+        this.payPalId = payPalId;
     }
 
     public String printReceipt(){
         String receipt = "Payment received: " + "\n"
-                + "Method: Paypal - " + creditCardNumber + "\n"
+                + "Method: Paypal - " + payPalId + "\n"
                 + "Amount: " + super.getPaymentAmount() + "\n";
         return receipt;
     }
