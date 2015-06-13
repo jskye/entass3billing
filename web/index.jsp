@@ -14,5 +14,6 @@
   </head>
   <body>
         Welcome to the backend billing app.<br>
+       <a href = "poll.jsp">Poll for a payment</a>
   </body>
 </html>

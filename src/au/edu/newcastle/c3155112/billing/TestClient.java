@@ -18,29 +18,32 @@ public class TestClient implements Runnable{
     @Override
     public void run() {
         // Initialize the resource proxy.
-        ClientResource cr = new ClientResource("http://localhost:8081/poll_payment");
+        ClientResource clientRes = new ClientResource("http://localhost:8081/poll_payment");
 //                "http://entass3cms.appspot.com/poll_payment");
         // Workaround for GAE servers to prevent chunk encoding
-        cr.setRequestEntityBuffering(true);
-        cr.accept(MediaType.APPLICATION_JSON);
-
-        PaymentResource resource = cr.wrap(PaymentResource.class);
+//        cr.setRequestEntityBuffering(true);
+        clientRes.accept(MediaType.APPLICATION_JSON);
 
         // Get the remote payment
-        Payment payment = null;
+//        JacksonRepresentation<Payment> payment = clientRes.get(Payment.class);
+        Payment payment = clientRes.get(Payment.class);
+        PaymentResource resource = clientRes.wrap(PaymentResource.class);
+
         try {
             payment = resource.retrieve();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
         if (payment != null) {
+            System.out.println(payment.toString());
             System.out.println("id: " + payment.getId());
             System.out.println("type: " + payment.getType());
             System.out.println("amount: " + payment.getAmount());
+            // Update the payment
+            payment.setAmount(0.0);
+            resource.store(payment);
         }
+        System.out.println("Payment null");
 
-        // Update the contact
-        payment.setAmount(0.0);
-        resource.store(payment);
     }
 }

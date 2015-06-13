@@ -46,6 +46,6 @@ public class Payment {
     @Override
     public String toString()
     {
-        return "type="+type+"&id="+id+"&amount="+String.valueOf(amount);
+        return "id="+id+"&type="+type+"&amount="+String.valueOf(amount);
     }
 }

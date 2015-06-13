@@ -17,9 +17,11 @@ import java.io.UnsupportedEncodingException;
 
 public interface PaymentResource {
     @Get
+//    public org.restlet.ext.jackson.JacksonRepresentation<Payment> retrieve() throws UnsupportedEncodingException;
     public Payment retrieve() throws UnsupportedEncodingException;
 
     @Put
+//    public void store(org.restlet.ext.jackson.JacksonRepresentation<Payment> payment);
     public void store(Payment payment);
 
     @Delete

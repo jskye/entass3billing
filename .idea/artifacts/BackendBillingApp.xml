@@ -9,6 +9,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="org.restlet" />
+          <element id="library" level="project" name="org.restlet.ext.jackson" />
         </element>
       </element>
     </root>
