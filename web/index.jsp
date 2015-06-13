@@ -10,9 +10,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title></title>
+    <title>Backend Billing App</title>
   </head>
   <body>
-
+        Welcome to the backend billing app.<br>
   </body>
 </html>
